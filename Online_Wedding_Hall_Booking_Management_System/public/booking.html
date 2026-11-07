@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Hall | EverAfter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">E</span><span>everafter<small>WEDDING VENUES</small></span></a><nav class="main-nav"><a href="index.html">Home</a><a href="halls.html">Explore Halls</a><a class="active" href="booking.html">Book a Hall</a><a href="payments.html">Payment Details</a><a class="nav-admin" href="admin.html">Admin</a></nav></header>
+  <main>
+    <section class="page-hero compact-hero"><p class="eyebrow">RESERVE YOUR DATE</p><h1>Let's plan your<br><em>special day.</em></h1><p>Share your event details. We'll take care of recording your booking request.</p></section>
+    <section class="section-wrap form-layout">
+      <div class="form-aside"><p class="eyebrow">A FEW DETAILS</p><h2>One step closer<br>to your celebration.</h2><p>Choose your preferred hall, date and time. Your booking will be created with Pending status until the administrator confirms it.</p><div class="aside-note">NEED HELP?<br><strong>Contact the venue administrator.</strong></div></div>
+      <form id="bookingForm" class="form-card">
+        <h2>Booking information</h2><p class="form-subtitle">Fields marked * are required.</p>
+        <div class="form-section-title">01 — Your details</div>
+        <div class="form-grid"><label>Full name *<input name="name" required maxlength="100" placeholder="Enter your full name"></label><label>Email address *<input name="email" type="email" required maxlength="100" placeholder="you@example.com"></label><label>Phone number *<input name="phone" required maxlength="15" placeholder="Mobile number"></label><label>Address<input name="address" maxlength="255" placeholder="Your city / address"></label></div>
+        <div class="form-section-title">02 — Event details</div>
+        <div class="form-grid"><label class="full-field">Event name *<input name="event_name" required maxlength="100" placeholder="e.g. Wedding Reception"></label><label>Event date *<input name="event_date" type="date" required></label><label>Number of guests *<input name="guests" type="number" min="1" value="100" required></label><label>Start time *<input name="start_time" type="time" required></label><label>End time *<input name="end_time" type="time" required></label><label class="full-field">Select hall *<select name="hall_id" id="bookingHall" required><option value="">Choose a hall</option></select></label></div>
+        <div id="bookingHallInfo" class="selection-info">Select a hall to view its capacity and price.</div>
+        <button class="btn btn-primary btn-wide" type="submit">Submit booking request <span>→</span></button>
+        <div id="bookingMessage" class="form-message" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">E</span><span>everafter<small>WEDDING VENUES</small></span></a><p>Thoughtful spaces for life's most beautiful celebrations.</p><span>© 2026 EVERAFTER VENUES</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>

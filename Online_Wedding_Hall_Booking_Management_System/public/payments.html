@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Details | EverAfter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">E</span><span>everafter<small>WEDDING VENUES</small></span></a><nav class="main-nav"><a href="index.html">Home</a><a href="halls.html">Explore Halls</a><a href="booking.html">Book a Hall</a><a class="active" href="payments.html">Payment Details</a><a class="nav-admin" href="admin.html">Admin</a></nav></header>
+  <main>
+    <section class="page-hero compact-hero"><p class="eyebrow">BOOKING & PAYMENT</p><h1>Keep every detail<br><em>in one place.</em></h1><p>Enter your booking ID to view the recorded payment information.</p></section>
+    <section class="section-wrap payment-lookup">
+      <form id="paymentLookup" class="lookup-card"><label>Booking ID<input name="booking_id" type="number" min="1" required placeholder="Enter your booking ID"></label><button class="btn btn-primary" type="submit">View payment details →</button></form>
+      <div id="paymentResults" class="results-panel"><p class="muted">Your payment details will appear here.</p></div>
+      <p class="small-note">This mini-project records payment details for demonstration. It does not process real online payments.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">E</span><span>everafter<small>WEDDING VENUES</small></span></a><p>Thoughtful spaces for life's most beautiful celebrations.</p><span>© 2026 EVERAFTER VENUES</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>

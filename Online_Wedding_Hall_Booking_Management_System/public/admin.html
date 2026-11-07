@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | EverAfter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">E</span><span>everafter<small>WEDDING VENUES</small></span></a><nav class="main-nav"><a href="index.html">Home</a><a href="halls.html">Explore Halls</a><a href="booking.html">Book a Hall</a><a href="payments.html">Payment Details</a><a class="active nav-admin" href="admin.html">Admin</a></nav></header>
+  <main>
+    <section class="page-hero compact-hero admin-hero"><p class="eyebrow">MANAGEMENT PORTAL</p><h1>Administrator<br><em>workspace.</em></h1><p>Manage venues, review reservations and maintain payment records.</p></section>
+    <section class="section-wrap admin-wrap">
+      <form id="adminLogin" class="login-card">
+        <div><p class="eyebrow">SECURE ACCESS</p><h2>Admin sign in</h2><p class="muted">Use the credentials configured in your .env file.</p></div>
+        <label>Username<input name="username" required value="admin"></label><label>Password<input name="password" type="password" required placeholder="Enter admin password"></label>
+        <button class="btn btn-primary" type="submit">Sign in →</button><div id="loginMessage" class="form-message"></div>
+      </form>
+
+      <div id="adminDashboard" class="dashboard hidden">
+        <div class="dashboard-top"><div><p class="eyebrow">CONTROL CENTRE</p><h2>Dashboard overview</h2></div><button id="adminLogout" class="btn btn-outline">Log out</button></div>
+        <div class="stats-grid"><article class="stat-card"><span>Total halls</span><strong id="statHalls">0</strong></article><article class="stat-card"><span>Total bookings</span><strong id="statBookings">0</strong></article><article class="stat-card"><span>Customers</span><strong id="statCustomers">0</strong></article><article class="stat-card"><span>Payment records</span><strong id="statPayments">0</strong></article></div>
+
+        <section class="admin-panel"><div class="panel-heading"><div><p class="eyebrow">VENUE MANAGEMENT</p><h3>Add / update hall</h3></div></div>
+          <form id="hallForm" class="admin-form">
+            <input type="hidden" name="hall_id">
+            <label>Hall name<input name="hall_name" required maxlength="100"></label><label>Location<input name="location" required maxlength="150"></label><label>Capacity<input name="capacity" type="number" min="1" required></label><label>Price (₹)<input name="price" type="number" min="0" step="0.01" required></label><label class="wide-admin-field">Facilities<textarea name="facilities" rows="2"></textarea></label><label>Status<select name="status"><option>Available</option><option>Unavailable</option></select></label>
+            <div class="admin-actions"><button class="btn btn-primary" type="submit">Save hall</button><button id="clearHallForm" class="btn btn-outline" type="button">Clear</button></div>
+          </form><div id="hallAdminMessage" class="form-message"></div><div id="adminHallList" class="table-wrap"></div>
+        </section>
+
+        <section class="admin-panel"><div class="panel-heading"><div><p class="eyebrow">RESERVATION MANAGEMENT</p><h3>All bookings</h3></div></div><div id="adminBookingList" class="table-wrap"></div></section>
+
+        <section class="admin-panel"><div class="panel-heading"><div><p class="eyebrow">PAYMENT MANAGEMENT</p><h3>Add payment record</h3></div></div>
+          <form id="paymentForm" class="admin-form payment-admin-form"><label>Booking ID<input name="booking_id" type="number" min="1" required></label><label>Amount (₹)<input name="amount" type="number" min="0" step="0.01" required></label><label>Payment status<select name="payment_status"><option>Pending</option><option>Paid</option><option>Partially Paid</option><option>Failed</option></select></label><button class="btn btn-primary" type="submit">Save payment</button></form><div id="paymentAdminMessage" class="form-message"></div><div id="adminPaymentList" class="table-wrap"></div>
+        </section>
+        <section class="admin-panel"><div class="panel-heading"><div><p class="eyebrow">CUSTOMER DIRECTORY</p><h3>Registered customers</h3></div></div><div id="adminCustomerList" class="table-wrap"></div></section>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">E</span><span>everafter<small>WEDDING VENUES</small></span></a><p>Thoughtful spaces for life's most beautiful celebrations.</p><span>© 2026 EVERAFTER VENUES</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
